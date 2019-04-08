@@ -18,9 +18,37 @@ class LifecycleB extends Component {
     console.log("LifecyleB componentDidMount");
   }
 
+  componentDidMount() {
+    console.log("LifecyleB componentDidMount");
+  }
+
+  shouldComponentUpdate() {
+    console.log("LifecycleB shouldComponentUpdate");
+    return true;
+  }
+
+  getSnapshotBeforeUpdate() {
+    console.log("LifecycleB getSnapshotBeforeUpdate");
+    return null;
+  }
+
+  componentDidUpdate() {
+    console.log("LifecycleB componentDidUpdate");
+  }
+
+  changeState = () => {
+    this.setState({
+      name: "Anuj Gupta"
+    });
+  };
   render() {
     console.log("LifecycleB render");
-    return <div> Lifecycle B</div>;
+    return (
+      <div>
+        Lifecycle B --> {this.state.name} <br />
+        <button onClick={this.changeState}>Change State</button>
+      </div>
+    );
   }
 }
 export default LifecycleB;
