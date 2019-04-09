@@ -14,6 +14,18 @@ import FragmentDemo from "./component/FragmentDemo";
 import Table from "./component/Table";
 import ParentComp from "./component/ParentComp";
 import ReactRefsDemo from "./component/ReactRefsDemo";
+import FocusInput from "./component/FocusInput";
+import FRParentInput from "./component/FRParentInput";
+import Hero from "./component/Hero";
+import ErrorBoundary from "./component/ErrorBoundary";
+import ClickCounter from "./component/ClickCounter";
+import MouseHoverCounter from "./component/MouseHoverCounter";
+import ClickCounterTwo from "./component/ClcikCounterTwo";
+import MouseHoverCounterTwo from "./component/MouseHoverCounterTwo";
+import User from "./component/User";
+import CounterTwo from "./component/CounterTwo";
+import ComponentA from "./component/ComponentA";
+import { ProviderContext } from "./component/userContext";
 
 class App extends Component {
   render() {
@@ -21,8 +33,38 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
+          <ProviderContext value="Anuj Gupta">
+            <ComponentA />
+          </ProviderContext>
+          {/* <CounterTwo
+            render={(count, incrementCount) => (
+              <ClickCounterTwo count={count} incrementCount={incrementCount} />
+            )}
+          />
+          <CounterTwo
+            render={(count, incrementCount) => (
+              <MouseHoverCounterTwo
+                count={count}
+                incrementCount={incrementCount}
+              />
+            )}
+          />
+          <User render={isLoggedIn => (isLoggedIn ? "Anuj" : "Guest")} />
+         <ClickCounter name="Anuj" />
+          <MouseHoverCounter />
+           <ErrorBoundary>
+            <Hero heroName="Anuj" />
+          </ErrorBoundary>
+          <ErrorBoundary>
+            <Hero heroName="Gupta" />
+          </ErrorBoundary>
+          <ErrorBoundary>
+            <Hero heroName="Jocker" />
+          </ErrorBoundary>
+           <FRParentInput />
+          <FocusInput />
           <ReactRefsDemo />
-          {/*<ParentComp />
+          <ParentComp />
           <Table />
             <FragmentDemo />
            <LifecycleA />
