@@ -26,6 +26,8 @@ import User from "./component/User";
 import CounterTwo from "./component/CounterTwo";
 import ComponentA from "./component/ComponentA";
 import { ProviderContext } from "./component/userContext";
+import DisplayPostsList from "./component/DisplayPostsList";
+import PostsForm from "./component/PostsForm";
 
 class App extends Component {
   render() {
@@ -33,10 +35,12 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <ProviderContext value="Anuj Gupta">
+          <PostsForm />
+          {/*<DisplayPostsList />
+           <ProviderContext value="Anuj Gupta">
             <ComponentA />
           </ProviderContext>
-          {/* <CounterTwo
+          <CounterTwo
             render={(count, incrementCount) => (
               <ClickCounterTwo count={count} incrementCount={incrementCount} />
             )}
